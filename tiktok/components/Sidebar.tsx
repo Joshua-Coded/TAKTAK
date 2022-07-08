@@ -65,6 +65,9 @@ onClick={() => setshowSidebar((prev) => !prev)}>
             </div>
     </div>
 )}
+<Discover />
+<SuggestedAccounts />
+<Footer />
 </div>
 
 )}
