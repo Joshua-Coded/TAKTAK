@@ -14,7 +14,9 @@ post: Video;
 }
 
 const VideoCard: NextPage<IProps> = ({post}) => {
-  return (
+ const  [isHover, setIsHover] = useState(false)
+
+    return (
     <div className="flex flex-col border-b-2 border-gray-200 pb-6">
         <div>
             <div className="flex gap-3 p-2 cursor-pointer font-semibold rounded">
@@ -54,7 +56,10 @@ const VideoCard: NextPage<IProps> = ({post}) => {
         </div>
 
 <div className="lg:ml-20 flex gap-4 relative">
-    <div className="rounded-3xl">
+    <div 
+    onMouseEnter={() => setIsHover(true)}
+    onMouseLeave={() => setIsHover(false)} 
+    className="rounded-3xl">
         <Link href="/">
             <video
             loop
@@ -65,6 +70,11 @@ const VideoCard: NextPage<IProps> = ({post}) => {
                 
             </video>
         </Link>
+        {isHover && (
+            <div>
+
+            </div>
+        )}
     </div>
 </div>
 
